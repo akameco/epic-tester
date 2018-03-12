@@ -1,0 +1,50 @@
+{
+  "name": "epic-tester",
+  "version": "0.0.0",
+  "description": "easy Epic test",
+  "license": "MIT",
+  "repository": "akameco/epic-tester",
+  "author": "akameco <akameco.t@gmail.com> (akameco.github.io)",
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "add-contributor": "all-contributors add",
+    "precommit": "yarn flow && lint-staged",
+    "fmt": "prettier --write '**/*.{js,json,md}'",
+    "flow": "flow",
+    "lint": "eslint .",
+    "test": "jest",
+    "test:cov": "jest --coverage --ci --runInBand",
+    "test:ci": "yarn flow && yarn lint && yarn test:cov"
+  },
+  "lint-staged": {
+    "*.{js,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    ""
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "all-contributors-cli": "^4.11.0",
+    "eslint": "^4.18.2",
+    "eslint-config-precure": "^2.6.0",
+    "flow-bin": "^0.67.1",
+    "husky": "^0.14.3",
+    "jest": "^22.4.2",
+    "lint-staged": "^7.0.0",
+    "prettier": "^1.11.1",
+    "redux-observable": "^0.18.0",
+    "rxjs": "^5.5.6"
+  },
+  "peerDependencies": {
+    "redux-observable": "^0.18.0",
+    "rxjs": "^5.5.6"
+  }
+}

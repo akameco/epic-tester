@@ -1,0 +1,6 @@
+{
+  "extends": ["precure", "precure/jest"],
+  "rules": {
+    jest/valid-describe: 0
+  }
+}
