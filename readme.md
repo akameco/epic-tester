@@ -5,7 +5,7 @@
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 
-> easy Epic test
+> simple Epic Marble Test
 
 ## Install
 
@@ -58,15 +58,20 @@ epicTester({
 
 ## API
 
-### `epicTester({title, epic, dependencies, tests})`
+### `epicTester({title, epic, state, dependencies, tests})`
 
 #### title
 
 Type: `string`
+required: `true`<br>
 
 test title.
 
 #### epic
+
+required: `true`<br>
+
+#### state
 
 #### dependencies
 
@@ -76,6 +81,7 @@ Default: `{}`
 #### tests
 
 Type: `Array<{title, input$, expect$, values}>`<br>
+required: `true`<br>
 Default: `[]`
 
 ## Contributors
