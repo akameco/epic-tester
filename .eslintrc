@@ -1,6 +1,7 @@
 {
   "extends": ["precure", "precure/jest"],
   "rules": {
-    jest/valid-describe: 0
+    "jest/valid-describe": 0,
+    "spaced-comment": 0
   }
 }

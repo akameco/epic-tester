@@ -1,8 +1,27 @@
-'use strict'
+// @flow
 const { TestScheduler } = require('rxjs')
 const { ActionsObservable } = require('redux-observable')
 
-function epicTester({ title, epic, dependencies = {}, tests = [] }) {
+/*::
+type Test = {
+  title: string,
+  input$: string,
+  expect$: string,
+  values: Object,
+}
+
+type Props = {
+  title: string,
+  epic: *,
+  state?: Object,
+  dependencies?: Object,
+  tests: Array<Test>,
+}
+*/
+
+function epicTester(
+  { title, epic, state = {}, dependencies = {}, tests = [] } /*: Props */
+) {
   describe(title, () => {
     for (const t of tests) {
       it(t.title, () => {
@@ -13,7 +32,7 @@ function epicTester({ title, epic, dependencies = {}, tests = [] }) {
 
         const test$ = epic(
           new ActionsObservable(cold(t.input$, t.values)),
-          testScheduler,
+          state,
           dependencies
         )
         testScheduler.expectObservable(test$).toBe(t.expect$, t.values)
@@ -24,6 +43,4 @@ function epicTester({ title, epic, dependencies = {}, tests = [] }) {
   })
 }
 
-module.exports = {
-  epicTester,
-}
+module.exports = { epicTester }
