@@ -28,7 +28,16 @@
     "index.js"
   ],
   "keywords": [
-    ""
+    "redux",
+    "redux-observable",
+    "rx",
+    "rxjs",
+    "epic",
+    "tester",
+    "epic-tester",
+    "observable",
+    "jest",
+    "test"
   ],
   "dependencies": {},
   "devDependencies": {
